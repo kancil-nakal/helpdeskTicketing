@@ -12,6 +12,7 @@ class Login extends CI_Controller{
 
 	public function index()
 	{
+		// echo "login"; die;
 		//Jika session tidak sama kosong (tidak sama dengan null)
 		if ($this->session->userdata('id_user')) {
 			//Masuk ke halaman Dashboard

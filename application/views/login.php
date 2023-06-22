@@ -48,7 +48,7 @@
 
 										<form action="<?php echo site_url('Login/loginProses') ?>" method="post">
 											<div class="form-group">
-												<input type="text" name="username" class="form-control" placeholder="Enter your ID number" maxlength="7" autofocus>
+												<input type="text" name="username" class="form-control" placeholder="Enter your ID number" maxlength="10" autofocus>
 												<?php echo form_error('username'); ?>
 											</div>
 

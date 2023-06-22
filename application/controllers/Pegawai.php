@@ -155,12 +155,14 @@ class Pegawai extends CI_Controller
 			//Bagian ini jika validasi dipenuhi, maka berhasil menambah pegawai
 			//Data pegawai ditampung dalam bentuk array
 			$data = array(
-				'nik'            => strtoupper($this->input->post('nik')),
+				'nik'            => (strtoupper($this->input->post('nik'))),
 				'nama'           => ucfirst($this->input->post('nama')),
 				'email'          => trim($this->input->post('email')),
 				'id_jabatan'     => $this->input->post('id_jabatan'),
 				'id_bagian_dept' => $this->input->post('id_bagian_departemen')
 			);
+
+			// var_dump($data);die;
 
 			//Query insert data yang ditampung ke dalam database. tersimpan ditabel karyawan
 			$this->db->insert('karyawan', $data);

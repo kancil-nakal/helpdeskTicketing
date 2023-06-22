@@ -21,6 +21,7 @@ class Dashboard extends CI_Controller
 
 	public function index()
 	{
+        // echo "halo"; die;
 		//Menyusul telplate dashboard
 		$data['title'] 		= "Dashboard";
         $data['navbar']     = "navbar";
