@@ -31,8 +31,21 @@ class Pegawai extends CI_Controller
 			$id_dept = $this->session->userdata('id_dept');
 			$id_user = $this->session->userdata('id_user');
 
+			$pegawai = $this->model_app->pegawai()->result();
 	        //Daftar semua pegawai, get dari model_app (pegawai), data akan ditampung dalam parameter 'pegawai'
-			$data['pegawai'] = $this->model_app->pegawai()->result();
+
+			$data['pegawai'] = [];
+
+			foreach ($pegawai as $key => $value) {
+				$data['pegawai'][$key]['id_pegawai'] = $value->nik;
+				$data['pegawai'][$key]['nik'] = decryptAES_vigenere($value->nik);
+				$data['pegawai'][$key]['nama'] = decryptAES_vigenere($value->nama);
+				$data['pegawai'][$key]['email'] = $value->email;
+				$data['pegawai'][$key]['nama_jabatan'] = $value->nama_jabatan;
+				$data['pegawai'][$key]['nama_bagian_dept'] = $value->nama_bagian_dept;
+				$data['pegawai'][$key]['nama_dept'] = $value->nama_dept;
+			}
+			
 
 			//Dropdown pilih jabatan, menggunakan model_app (dropdown_jabatan), nama pegawai ditampung pada 'dd_jabatan', data yang akan di simpan adalah id_jabatan dan akan ditampung pada 'id_jabatan'
 			$data['dd_jabatan'] = $this->model_app->dropdown_jabatan();
@@ -155,14 +168,22 @@ class Pegawai extends CI_Controller
 			//Bagian ini jika validasi dipenuhi, maka berhasil menambah pegawai
 			//Data pegawai ditampung dalam bentuk array
 			$data = array(
-				'nik'            => (strtoupper($this->input->post('nik'))),
-				'nama'           => ucfirst($this->input->post('nama')),
+				'nik'            => encryptAES_vigenere(strtoupper($this->input->post('nik'))),
+				'nama'           => encryptAES_vigenere(ucfirst($this->input->post('nama'))),
 				'email'          => trim($this->input->post('email')),
 				'id_jabatan'     => $this->input->post('id_jabatan'),
 				'id_bagian_dept' => $this->input->post('id_bagian_departemen')
 			);
 
-			// var_dump($data);die;
+			// $data_decrypt = [
+			// 	'nik' => decryptAES_vigenere($data['nik']),
+			// 	'nama' => decryptAES_vigenere($data['nama']) 
+			// ];
+
+		
+			// var_dump(['encrypt',$data]);
+			// var_dump(['decrypt',$data_decrypt]);
+			// die;
 
 			//Query insert data yang ditampung ke dalam database. tersimpan ditabel karyawan
 			$this->db->insert('karyawan', $data);
@@ -189,6 +210,7 @@ class Pegawai extends CI_Controller
 
 	public function edit($id)
 	{
+		$id = urldecode($id);
 		//User harus admin, tidak boleh role user lain
 		if($this->session->userdata('level') == "Admin"){
 			//Menyusun template Edit pegawai
@@ -201,8 +223,12 @@ class Pegawai extends CI_Controller
 			$id_dept = $this->session->userdata('id_dept');
 			$id_user = $this->session->userdata('id_user');
 
+
 			//Query untuk mengambil data pegawai yang akan diedit, query ditampung dalam variabel '$row' untuk memanggil setiap data pada 1 orang pegawai
 			$row = $this->model_app->profile($id)->row();
+
+			var_dump($id);die;
+
 
 			//mengambil data nik yang sesuai dengan $id yang dipilih dan ditampung pada variabel $data dengan nama = nik
 			$data['nik'] 				  = $id;

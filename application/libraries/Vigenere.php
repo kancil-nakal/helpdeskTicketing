@@ -273,7 +273,7 @@ class Vigenere {
                     // then the output will be converted from lowercase to uppercase.
                     if(ctype_upper($message[$j])){
                         // Appending the output.
-                        $output .= strtoupper($decrypted[$k]);
+                        $output .= isset($decrypted[$k]) ? strtoupper($decrypted[$k]) : '';
         
                         // Adding the position counter.
                         $k += 1;
@@ -281,7 +281,7 @@ class Vigenere {
                     // Else, just append the decrypted message to the output.
                     else{
                         // Appending the output.
-                        $output .= $decrypted[$k];
+                        $output .= isset($decrypted[$k]) ? $decrypted[$k] : '';
         
                         // Adding the position counter.
                         $k += 1;

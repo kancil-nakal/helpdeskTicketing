@@ -53,16 +53,16 @@
 						<?php $no = 1; foreach ($pegawai as $row){?>
 							<tr>
 								<td><?php echo $no ?></td>
-								<td><?php echo $row->nik?></td>
-								<td><?php echo $row->nama?></td>
-								<td><?php echo $row->email?></td>
-								<td><?php echo $row->nama_jabatan?></td>
-								<td><?php echo $row->nama_dept?></td>
-								<td><?php echo $row->nama_bagian_dept?></td>
+								<td><?php echo $row['nik']?></td>
+								<td><?php echo $row['nama']?></td>
+								<td><?php echo $row['email']?></td>
+								<td><?php echo $row['nama_jabatan']?></td>
+								<td><?php echo $row['nama_dept']?></td>
+								<td><?php echo $row['nama_bagian_dept']?></td>
 								<td>
-									<a href="<?php echo site_url('Pegawai/edit/'.$row->nik) ?>" data-toggle="tooltip" title="Edit Employee" class="btn btn-warning btn-circle btn-sm"><i class="fa fa-edit"></i>
+									<a href="<?php echo site_url('Pegawai/edit/'.$row['nik']) ?>" data-toggle="tooltip" title="Edit Employee" class="btn btn-warning btn-circle btn-sm"><i class="fa fa-edit"></i>
 									</a>
-									<a href="<?php echo site_url('Pegawai/hapus/'.$row->nik) ?>" data-toggle="tooltip" title="Detele Employee" class="btn btn-danger btn-circle btn-sm hapus"><i class="fas fa-trash"></i>
+									<a href="<?php echo site_url('Pegawai/hapus/'.$row['nik']) ?>" data-toggle="tooltip" title="Detele Employee" class="btn btn-danger btn-circle btn-sm hapus"><i class="fas fa-trash"></i>
 									</a>
 								</td>
 							</tr>

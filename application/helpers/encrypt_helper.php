@@ -21,6 +21,7 @@ function decryptAES_vigenere($data)
     );
 
     $aes = new AesCtr();
+
     $data = $CI->vigenere->decrypt(ucfirst($aes->decrypt($data, $CI->config->item('kunci2'), 128)),$CI->config->item('kunci1'));
 
     return $data;
