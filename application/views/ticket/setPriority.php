@@ -84,7 +84,7 @@
 				</div><hr>
 				<h6 class="m-0 font-weight-bold text-primary">Email</h6>
 				<div class="font-weight-bold">
-					<?php echo $detail['email'] ?><p></p>
+					<?php echo decryptAES_vigenere($detail['email']) ?><p></p>
 				</div><hr>
 				<h6 class="m-0 font-weight-bold text-primary">Location</h6>
 				<div class="font-weight-bold">
