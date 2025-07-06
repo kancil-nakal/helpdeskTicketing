@@ -4,9 +4,9 @@
 	<!-- Sidebar - Brand -->
 	<a class="sidebar-brand d-flex align-items-center justify-content-center bg-white" href="<?php echo site_url('Dashboard') ?>">
 		<div class="sidebar-brand-icon">
-			<img width="70px" height="50px" src="<?php echo base_url(); ?>assets/img/icon.png">
+			<img width="70px" height="50px" src="<?php echo base_url(); ?>assets/img/infomedialogo.png">
 		</div>
-		<div class="sidebar-brand-text mx-3 text-gray-800">GENESYS</div>
+		<div class="sidebar-brand-text mx-3 text-gray-800">INFOMEDIA</div>
 	</a>
 
 	<!--Menu Untuk Admin-->

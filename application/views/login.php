@@ -29,8 +29,8 @@
 							<div class="col-lg">
 								<div class="p-5">
 									<div class="text-center">
-										<img src="<?php echo base_url() ?>assets/img/LBE12.png" style="width: 300px; height: 70px"><br>
-										<h1 class="h2 text-center push-top-bottom animation-slideDown" style="color: black"><b>GENESYS</b></h1><br>
+										<img src="<?php echo base_url() ?>assets/img/infomedialogo.png" style="width: 100px; height: auto"><br>
+										<h1 class="h2 text-center push-top-bottom animation-slideDown" style="color: black"><b>INFOMEDIA</b></h1><br>
 
 										<?php if($this->session->flashdata('status')) : ?>
 											<div class="alert alert-danger alert-dismissable">

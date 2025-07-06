@@ -87,13 +87,13 @@
 					<i class="fas fa-exclamation-triangle"></i>
 					<?php echo $detail['nama_kondisi'] ?><p></p>
 				</div><hr>
-				<h6 class="m-0 font-weight-bold text-primary">Subect</h6>
+				<h6 class="m-0 font-weight-bold text-primary">Subject</h6>
 				<div class="font-weight-bold">
-					<?php echo $detail['problem_summary'] ?><p></p>
+					<?php echo decryptAES_vigenere($detail['problem_summary'])  ?><p></p>
 				</div><hr>
 				<h6 class="m-0 font-weight-bold text-primary">Description</h6>
 				<div class="font-weight-bold">
-					<?php echo nl2br($detail['problem_detail']) ?><p></p>
+					<?php echo decryptAES_vigenere( nl2br($detail['problem_detail'])) ?><p></p>
 				</div><hr>
 				<div class="form-group">
 					<h6 class="m-0 font-weight-bold text-primary">Describe Your Diagnosis</h6><br>

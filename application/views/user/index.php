@@ -64,7 +64,7 @@
 
 					<div class="form-group">
 						<label>Employee</label>
-						<?php echo form_dropdown('id_pegawai', $dd_pegawai, $id_pegawai, ' id="id_pegawai" class="form-control"'); ?>
+						<?php echo  form_dropdown('id_pegawai', $dd_pegawai, $id_pegawai, ' id="id_pegawai" class="form-control"'); ?>
 					</div>
 
 					<div class="form-group">

@@ -178,15 +178,13 @@ class List_ticket_user extends CI_Controller
 					'last_update'		=> date("Y-m-d  H:i:s"),
 					'reported'			=> $id_user,
 					'id_sub_kategori' 	=> $this->input->post('id_sub_kategori'),
-					'problem_summary'	=> encryptAES_vigenere(ucfirst($this->input->post('problem_summary'))),
-					'problem_detail'	=> encryptAES_vigenere(ucfirst($this->input->post('problem_detail'))),
+					'problem_summary'	=> encryptAES_vigenere(strtolower($this->input->post('problem_summary'))),
+					'problem_detail'	=> encryptAES_vigenere(strtolower($this->input->post('problem_detail'))),
 					'status'    		=> 1,
 					'progress'			=> 0,
 					'filefoto'			=> $gambar['file_name'],
 					'id_lokasi'			=> $this->input->post('id_lokasi')
 				);
-
-				var_dump($data);die;
 
 
 	        	//Data tracking ditampung dalam bentuk array

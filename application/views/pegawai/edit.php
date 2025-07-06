@@ -43,12 +43,12 @@
 				
 				<div class="form-group">
 					<label>Name</label>
-					<input class="form-control" name="nama" rows="3" value="<?php echo $nama?>"></input>
+					<input class="form-control" name="nama" rows="3" value="<?php echo decryptAES_vigenere($nama)?>"></input>
 				</div>
 
 				<div class="form-group">
 					<label>Email</label>
-					<input class="form-control" name="email" rows="3" value="<?php echo $email?>"></input>
+					<input class="form-control" name="email" rows="3" value="<?php echo decryptAES_vigenere($email)?>"></input>
 				</div>
 
 				<div class="form-group">

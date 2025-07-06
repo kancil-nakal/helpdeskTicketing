@@ -40,7 +40,7 @@
 						Email
 					</h6>
 					<div class="font-weight">
-						<?php echo $profile['email'] ?><br>
+						<?php echo decryptAES_vigenere($profile['email'])  ?><br>
 					</div><hr>
 
 					<h6 class="m-0 font-weight text-primary">

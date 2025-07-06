@@ -128,10 +128,14 @@ class Vigenere {
                     // then the output will be converted from lowercase to uppercase.
                     if(ctype_upper($message[$j])){
                         // Appending the output.
-                        $output .= strtoupper($encrypted[$k]);
-        
-                        // Adding the position counter.
-                        $k += 1;
+                        if (isset($encrypted[$k])) {
+                            $output .= strtoupper($encrypted[$k]);
+                            $k += 1;
+                        } else {
+                            // Tangani error dengan lebih baik, misal log atau break
+                            // error_log("Index \$k = $k melebihi panjang \$encrypted");
+                            break;
+                        }
                     }
                     // Else, just append the encrypted message to the output.
                     else{

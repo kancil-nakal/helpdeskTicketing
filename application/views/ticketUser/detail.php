@@ -53,11 +53,11 @@
 			</div><hr>
 			<h6 class="m-0 font-weight-bold text-primary">Subect</h6>
 			<div class="font-weight-bold">
-				<?php echo $detail['problem_summary'] ?><br>
+				<?php echo decryptAES_vigenere($detail['problem_summary']) ?><br>
 			</div><hr>
 			<h6 class="m-0 font-weight-bold text-primary">Description</h6>
 			<div class="font-weight-bold">
-				<?php echo nl2br($detail['problem_detail']) ?><br>
+				<?php echo nl2br(decryptAES_vigenere($detail['problem_detail'])) ?><br>
 			</div>
 		</div>
 	</div>

@@ -34,7 +34,7 @@
 								<td><?php echo $row->nama?></td>
 								<td><?php echo $row->nama_kategori?> (<?php echo $row->nama_sub_kategori?>)</td>
 								<td><?php echo $row->lokasi?></td>
-								<td><?php echo $row->problem_summary?></td>
+								<td><?php echo decryptAES_vigenere($row->problem_summary)?></td>
 								<?php if ($row->status == 0) {?>
 									<td>
 										<strong style="color: #F36F13;">Ticket Rejected</strong>

@@ -1,4 +1,4 @@
-<div class="container-fluid">
+	<div class="container-fluid">
 	<h1 class="h3 mb-0 text-gray-800">Ticket Assigned</h1>
 	<p class="mb-4">List of all ticket that Assigned to You.</p>
 
@@ -38,7 +38,7 @@
 								<td><?php echo $row->nama?></td>
 								<td><?php echo $row->nama_sub_kategori?></td>
 								<td><?php echo $row->lokasi?></td>
-								<td><?php echo $row->problem_summary?></td>
+								<td><?php echo decryptAES_vigenere($row->problem_summary)?></td>
 								<td>
 									<?php if ($row->status == 3) { ?>
 										<a href="<?php echo site_url('List_ticket_tek/detail_approve/'.$row->id_ticket)?>" class="btn btn-primary btn-circle btn-sm" title="Detail">

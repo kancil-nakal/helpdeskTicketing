@@ -9,7 +9,7 @@
 	<link href="<?php echo base_url() ?>assets/css/timeline.css" rel="stylesheet">
 	<!-- Custom styles for this page -->
 	<link href="<?php echo base_url() ?>assets/vendor/datatables/dataTables.bootstrap4.css" rel="stylesheet">
-	<link rel="icon" type="image/png" href="<?php echo base_url(); ?>assets/img/icon.png">
+	<link rel="icon" type="image/png" href="<?php echo base_url(); ?>assets/img/infomedialogo.png">
 	<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
 	<script src="https://cdn.jsdelivr.net/npm/jquery@3.4.1/dist/jquery.min.js"></script>

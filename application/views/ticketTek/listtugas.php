@@ -46,7 +46,7 @@
 								<td><?php echo $row->nama?></td>
 								<td><?php echo $row->nama_sub_kategori?></td>
 								<td><?php echo $row->lokasi?></td>
-								<td><?php echo $row->problem_summary?></td>
+								<td><?php echo decryptAES_vigenere($row->problem_summary) ?></td>
 								<td><?php echo $row->progress?>%</td>
 								<td>
 									<?php if($row->status==4)

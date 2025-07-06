@@ -1,5 +1,5 @@
 <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
-	<div class="font-weight-bold text-gray-800">PT. Lestari Banten Energi</div>
+	<!-- <div class="font-weight-bold text-gray-800">PT. Lestari Banten Energi</div> -->
 	<ul class="navbar-nav ml-auto">
 		<li class="nav-item dropdown no-arrow">
 			<a class="nav-link dropdown-toggle" href="javascript:void(0)" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
