@@ -4,7 +4,7 @@
 		<li class="nav-item dropdown no-arrow">
 			<a class="nav-link dropdown-toggle" href="javascript:void(0)" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 				<span class="mr-2 d-none d-lg-inline text-gray-800 small">
-					<?php echo $this->session->userdata('nama'); ?>
+					<?php echo decryptAES_vigenere($this->session->userdata('nama')); ?>
 				</span>
 				<i class="fas fa-fw fa-user text-black-100"></i>
 			</a>

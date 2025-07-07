@@ -31,7 +31,7 @@
 								<td><?php echo $no ?></td>
 								<td><?php echo $row->id_ticket?></td>
 								<td><?php echo $row->tanggal?></td>
-								<td><?php echo $row->nama?></td>
+								<td><?php echo decryptAES_vigenere($row->nama)?></td>
 								<td><?php echo $row->nama_kategori?> (<?php echo $row->nama_sub_kategori?>)</td>
 								<td><?php echo $row->lokasi?></td>
 								<td><?php echo decryptAES_vigenere($row->problem_summary)?></td>

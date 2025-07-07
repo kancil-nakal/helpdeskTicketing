@@ -5,7 +5,7 @@
 	<div class="card shadow mb-4">
 		<div class="card-header py-3">
 			<h6 class="m-0 font-weight-bold text-primary">
-				<?php echo " Ticket from ".$detail['nama']." (" .$detail['tanggal'].")" ?>
+				<?php echo " Ticket from ". decryptAES_vigenere($detail['nama'])." (" .$detail['tanggal'].")" ?>
 			</h6>
 		</div>
 		<div class="card-body">
@@ -78,7 +78,7 @@
 							</div>
 							<div class="tracking-content">
 								<div class="font-weight-bold text-primary"><?php echo $row->status?></div>
-								<h4 class="small font-weight-bold">By: <?php echo $row->nama?></h4>
+								<h4 class="small font-weight-bold">By: <?php echo decryptAES_vigenere($row->nama)?></h4>
 								<?php if($row->filefoto!="")
 						        	{?>
 						        		<?php if (pathinfo($row->filefoto, PATHINFO_EXTENSION) == 'pdf'){?>
@@ -109,7 +109,7 @@
 			<div class="card shadow mb-4">
 				<div class="card-header py-3">
 					<h6 class="m-0 font-weight-bold text-primary">
-						<?php echo " Processed By ".$detail['nama_teknisi'] ?></h6>
+						<?php echo " Processed By ". decryptAES_vigenere($detail['nama_teknisi']) ?></h6>
 				</div>
 				<div class="card-body">
 					<h6 class="font-weight-bold text-primary">Progress <span class="float-right text-primary"><?php echo $detail['progress'] ?>%</span></h6>

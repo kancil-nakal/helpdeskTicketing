@@ -140,7 +140,7 @@ class Model_app extends CI_Model
         $value[''] = '-- CHOOSE --';
         //Menaruh data user teknisi ke dalam dropdown, value yang akan diambil adalah value id_user yang memiliki level 'Technician'
         foreach ($query->result() as $row) {
-            $value[$row->username] = $row->nama;
+            $value[$row->username] = decryptAES_vigenere($row->nama);
         }
         return $value;
     }
@@ -341,7 +341,7 @@ class Model_app extends CI_Model
         $value[''] = '-- CHOOSE --';
         //Menaruh data pegawai ke dalam dropdown, value yang akan diambil adalah value nik
         foreach ($query->result() as $row) {
-            $value[$row->nik] = $row->nama;
+            $value[$row->nik] = decryptAES_vigenere($row->nama);
         }
         return $value;
     }

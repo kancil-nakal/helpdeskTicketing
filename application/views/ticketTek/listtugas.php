@@ -43,7 +43,7 @@
 								        echo "$row->tanggal_solved";
 								    } ?>
 								</td>
-								<td><?php echo $row->nama?></td>
+								<td><?php echo decryptAES_vigenere($row->nama)?></td>
 								<td><?php echo $row->nama_sub_kategori?></td>
 								<td><?php echo $row->lokasi?></td>
 								<td><?php echo decryptAES_vigenere($row->problem_summary) ?></td>

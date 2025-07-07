@@ -32,7 +32,7 @@
 							<tr>
 								<td><?php echo $no ?></td>
 								<td><?php echo $row->nik?></td>
-								<td><?php echo $row->nama?></td>
+								<td><?php echo decryptAES_vigenere($row->nama)?></td>
 								<td><?php echo $row->nama_dept?></td>
 								<td><?php echo $row->nama_bagian_dept?></td>
 								<td><strong><?php echo $row->level?></strong></td>

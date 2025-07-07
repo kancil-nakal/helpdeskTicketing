@@ -53,7 +53,7 @@
 								    	if($row->teknisi == null){
 								    		echo "Will be determined";
 								    	} else {
-								    		echo "$row->nama_teknisi";
+								    		echo decryptAES_vigenere($row->nama_teknisi);
 								    	}
 								    } ?>
 								</td>

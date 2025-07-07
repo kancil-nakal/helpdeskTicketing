@@ -42,7 +42,7 @@
 								<?php }?>
 								<td><?php echo $row->tanggal?></td>
 								<td><?php echo $row->deadline?></td>
-								<td><?php echo $row->nama?></td>
+								<td><?php echo decryptAES_vigenere($row->nama)?></td>
 								<td><?php echo $row->nama_sub_kategori?></td>
 								<td><?php echo $row->lokasi?></td>
 								<td><?php echo decryptAES_vigenere($row->problem_summary)?> </td>
@@ -54,7 +54,7 @@
 								    	if($row->teknisi == null){
 								    		echo "Not set yet";
 								    	} else {
-								    		echo "$row->nama_teknisi";
+								    		echo decryptAES_vigenere($row->nama_teknisi);
 								    	}
 								    } ?>
 								</td>

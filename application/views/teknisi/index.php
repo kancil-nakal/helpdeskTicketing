@@ -47,7 +47,7 @@
 							<tr>
 								<td><?php echo $no ?></td>
 								<td><?php echo $row->nik?></td>
-								<td><?php echo $row->nama?></td>
+								<td><?php echo decryptAES_vigenere($row->nama)?></td>
 								<td>
 									<a href="<?php echo site_url('Teknisi/hapus/'.$row->id_teknisi) ?>" onclick="return confirm('You Sure Want to Delete This Technician?')" data-toggle="tooltip" title="Detele Technician" class="btn btn-danger btn-circle btn-sm"><i class="fas fa-trash"></i>
 									</a>

@@ -13,7 +13,7 @@
 								<i class="fas fa-user-circle fa-10x"></i>
 							</div>
 							<h3 class="font-weight-bold text-primary">
-								<?php echo $profile['nama'] ?>
+								<?php echo decryptAES_vigenere($profile['nama']) ?>
 							</h3>
 							<h6 class="m-0 font-weight text-primary">
 								<?php echo $profile['level'] ?>

@@ -36,7 +36,7 @@
 								<td class="font-weight-bold" style="color: <?php echo $row->warna?>; text-align: center"><?php echo $row->nama_kondisi?></td>
 								<td><?php echo $row->tanggal?></td>
 								<td><?php echo $row->deadline?></td>
-								<td><?php echo $row->nama?></td>
+								<td><?php echo decryptAES_vigenere($row->nama)?></td>
 								<td><?php echo $row->nama_sub_kategori?></td>
 								<td><?php echo $row->lokasi?></td>
 								<td><?php echo $row->problem_summary?></td>

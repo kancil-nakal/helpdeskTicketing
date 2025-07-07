@@ -49,7 +49,7 @@
 		<div class="card shadow mb-4">
 			<div class="card-header py-3">
 				<h6 class="m-0 font-weight-bold text-gray-800">
-					<?php echo " Ticket from ".$detail['nama']." (" .$detail['tanggal'].")" ?>
+					<?php echo " Ticket from ". decryptAES_vigenere($detail['nama'])." (" .$detail['tanggal'].")" ?>
 				</h6>
 			</div>
 

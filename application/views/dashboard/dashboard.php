@@ -104,7 +104,7 @@
 											<td><?php echo $no ?></td>
 											<td><?php echo $row->id_ticket ?></td>
 											<td><?php echo $row->tanggal ?></td>
-											<td><?php echo $row->nama ?></td>
+											<td><?php echo decryptAES_vigenere($row->nama) ?></td>
 											<td><?php echo $row->nama_sub_kategori ?></td>
 											<?php if($row->id_kondisi == 0){?>
 												<td>Not set yet</td>
@@ -166,7 +166,7 @@
 							foreach ($teknisi as $row) : $no++; ?>
 									<i class="fas fa-fw fa-user text-black-100"></i>
 									<B class="chat-img pull-left">
-										<?php echo $row->nama; ?>
+										<?php echo decryptAES_vigenere($row->nama); ?>
 									</B>
 									<div class="chat-body clearfix">
 										<?php if ($row->total == null) {
@@ -362,7 +362,7 @@
 											<?php }?> 
 											<td><?php echo $row->tanggal ?></td>
 											<td><?php echo $row->deadline ?></td>
-											<td><?php echo $row->nama ?></td>
+											<td><?php echo decryptAES_vigenere($row->nama) ?></td>
 											<td><?php echo $row->nama_sub_kategori ?></td>
 											<?php if ($row->status == 3) {?>
 												<td>
@@ -403,7 +403,7 @@
 							foreach ($datainformasi as $row) : $no++; ?>
 								<li class="left clearfix">
 									<span class="chat-img pull-left">
-										<?php echo $row->nama; ?> (<small><?php echo $row->tanggal; ?></small>)
+										<?php echo decryptAES_vigenere($row->nama); ?> (<small><?php echo $row->tanggal; ?></small>)
 									</span>
 									<div class="chat-body clearfix">
 										<b><?php echo $row->subject; ?></b>
@@ -526,7 +526,7 @@
 											<td><?php echo $no ?></td>
 											<td><?php echo $row->id_ticket ?></td>
 											<td><?php echo $row->tanggal ?></td>
-											<td><?php echo $row->nama ?></td>
+											<td><?php echo decryptAES_vigenere($row->nama) ?></td>
 											<td><?php echo $row->nama_sub_kategori ?></td>
 											<?php if ($row->status == 0) {?>
 												<td>
@@ -583,7 +583,7 @@
 							foreach ($datainformasi as $row) : $no++; ?>
 								<li class="left clearfix">
 									<span class="chat-img pull-left">
-										<?php echo $row->nama; ?> (<small><?php echo $row->tanggal; ?></small>)
+										<?php echo decryptAES_vigenere($row->nama) ?> (<small><?php echo $row->tanggal; ?></small>)
 									</span>
 									<div class="chat-body clearfix">
 										<b><?php echo $row->subject; ?></b>

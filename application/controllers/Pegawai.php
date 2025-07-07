@@ -36,16 +36,6 @@ class Pegawai extends CI_Controller
 
 			$data['pegawai'] = $pegawai;
 
-			// foreach ($pegawai as $key => $value) {
-			// 	$data['pegawai'][$key]['id_pegawai'] = $value->nik;
-			// 	$data['pegawai'][$key]['nik'] = $value->nik;
-			// 	$data['pegawai'][$key]['nama'] = decryptAES_vigenere($value->nama);
-			// 	$data['pegawai'][$key]['email'] = decryptAES_vigenere($value->email);
-			// 	$data['pegawai'][$key]['nama_jabatan'] = $value->nama_jabatan;
-			// 	$data['pegawai'][$key]['nama_bagian_dept'] = $value->nama_bagian_dept;
-			// 	$data['pegawai'][$key]['nama_dept'] = $value->nama_dept;
-			// }
-			
 
 			//Dropdown pilih jabatan, menggunakan model_app (dropdown_jabatan), nama pegawai ditampung pada 'dd_jabatan', data yang akan di simpan adalah id_jabatan dan akan ditampung pada 'id_jabatan'
 			$data['dd_jabatan'] = $this->model_app->dropdown_jabatan();
@@ -169,7 +159,7 @@ class Pegawai extends CI_Controller
 			//Data pegawai ditampung dalam bentuk array
 			$data = array(
 				'nik'            => (strtoupper($this->input->post('nik'))),
-				'nama'           => strtolower($this->input->post('nama')),
+				'nama'           => encryptAES_vigenere(strtolower($this->input->post('nama'))),
 				'email'          => encryptAES_vigenere(trim($this->input->post('email'))),
 				'id_jabatan'     => $this->input->post('id_jabatan'),
 				'id_bagian_dept' => $this->input->post('id_bagian_departemen')
